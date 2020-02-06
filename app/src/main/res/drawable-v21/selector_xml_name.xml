@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:enterFadeDuration="@android:integer/config_shortAnimTime" android:exitFadeDuration="@android:integer/config_longAnimTime">
+    <item android:state_pressed="true">
+        <shape>
+            <gradient android:angle="270" android:endColor="@color/colorPrimary" android:startColor="@color/colorPrimaryDark" />
+
+        </shape>
+    </item>
+    <item android:state_pressed="false">
+
+        <shape>
+            <gradient android:angle="270"  android:endColor="@color/colorPrimary" android:startColor="@color/colorAccent" />
+        </shape>
+
+    </item>
+    <item android:state_checked="true">
+        <color android:color="#1f7aff" />
+    </item>
+</selector>

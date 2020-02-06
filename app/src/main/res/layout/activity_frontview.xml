@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_frontview"
+    android:layout_width="match_parent"
+    android:background="@drawable/backgorund"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.app.urbfs.ethiqs.Frontview">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/txtappname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="22dp"
+            android:gravity="center_vertical"
+            android:text="test"
+            android:textColor="#ffff"
+            android:textSize="20dp"
+
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.daimajia.slider.library.SliderLayout
+                            android:id="@+id/slider"
+                            android:layout_width="fill_parent"
+                            android:layout_height="350dp"
+                            android:background="@drawable/backgorund" />
+
+                        <ViewFlipper
+                            android:id="@+id/viewflipper"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:autoStart="true"
+                            android:flipInterval="1500"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:contentDescription="@string/slider_img1"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/slider" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:contentDescription="@string/slider_img2"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/slider2" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:contentDescription="@string/slider_img3"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/slider3" />
+                        </ViewFlipper>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/cardTrding"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:visibility="gone"
+                                android:background="@drawable/shapea"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:background="@drawable/selector_xml"
+
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/img_trend"
+                                        android:layout_width="88dp"
+                                        android:layout_height="73dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="30dp"
+                                        android:src="@drawable/ic_char" />
+
+                                    <TextView
+                                        android:id="@+id/tv_trend"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="20dp"
+                                        android:gravity="center_vertical"
+                                        android:text="Trending"
+                                        android:textColor="@color/black"
+                                        android:textSize="24dp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/cardRefMaster"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+
+                                android:background="@drawable/shapeb"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:background="@drawable/selector_xml"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/rechargereferal"
+                                        android:layout_width="100dp"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_marginBottom="20dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="30dp"
+                                        android:src="@drawable/ic_refrer" />
+
+                                    <TextView
+                                        android:id="@+id/textdirect"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="20dp"
+                                        android:gravity="center_vertical"
+                                        android:text="Referal Master"
+                                        android:textColor="@color/black"
+                                        android:textSize="28dp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/cardWebsite"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/shapec"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:background="@drawable/selector_xml"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:paddingRight="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/website"
+                                        android:layout_width="100dp"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_marginBottom="20dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="30dp"
+                                        android:src="@drawable/ic_www" />
+
+                                    <TextView
+                                        android:id="@+id/textwallet"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="20dp"
+                                        android:gravity="center_vertical"
+                                        android:text="Website"
+                                        android:textColor="@color/black"
+                                        android:textSize="28dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/cardLogout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/shaped"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:background="@drawable/selector_xml"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:paddingRight="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/logout"
+                                        android:layout_width="100dp"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_marginBottom="20dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="30dp"
+                                        android:src="@drawable/ic_logout" />
+
+                                    <TextView
+                                        android:id="@+id/textworkingwallet"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="20dp"
+                                        android:gravity="center_vertical"
+                                        android:text="Logout"
+                                        android:textColor="@color/black"
+                                        android:textSize="28dp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/footer"
+        android:visibility="gone"
+        layout="@layout/footer" />
+</RelativeLayout>
+
+

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <LinearLayout
+                    android:id="@+id/mainReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#20000000"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="visible">
+
+
+                    <EditText
+                        android:id="@+id/edLogId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/box"
+                        android:focusableInTouchMode="false"
+                        android:gravity="left"
+                        android:hint="Login Id"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/edMName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+                        android:focusableInTouchMode="false"
+                        android:gravity="left"
+
+                        android:hint="Member name"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+
+                    <EditText
+                        android:id="@+id/edSpillby"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+                        android:focusableInTouchMode="false"
+
+                        android:gravity="left"
+                        android:hint="Spill by"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/edMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+                        android:focusableInTouchMode="false"
+
+                        android:gravity="left"
+                        android:hint="Mobile"
+                        android:inputType="textEmailAddress"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/edPan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+
+                        android:focusableInTouchMode="false"
+                        android:gravity="left"
+                        android:hint="Pan card"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/edAdharCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+
+                        android:focusableInTouchMode="false"
+                        android:gravity="left"
+                        android:hint="Adhar card"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/edEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/box"
+                        android:focusableInTouchMode="false"
+                        android:gravity="left"
+                        android:hint="Email"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/edPhonPAy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/box"
+                        android:focusableInTouchMode="false"
+                        android:gravity="left"
+                        android:hint="Phon pay"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/edGooglepay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+                        android:focusableInTouchMode="false"
+                        android:gravity="left"
+                        android:hint="Google pay"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/edAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+                        android:focusableInTouchMode="false"
+                        android:gravity="left"
+                        android:hint="Address"
+
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent" />
+
+                    <Button
+                        android:id="@+id/btnEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="30dp"
+                        android:background="@drawable/selector_xml_name"
+                        android:gravity="center"
+                        android:text="Edit"
+                        android:textColor="#fff"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/btnSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="30dp"
+                        android:background="@drawable/selector_xml_name"
+                        android:gravity="center"
+                        android:text="Save your data"
+                        android:textColor="#fff"
+                        android:textSize="18dp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

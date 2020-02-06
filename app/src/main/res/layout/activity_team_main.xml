@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgorund"
+    tools:context=".activity.Team_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <TextView
+                    android:id="@+id/tvLogId"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:text="ID"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:text="Name"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvSpon"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:text="S-ID"
+                    android:textColor="@color/black" />
+
+                <TextView
+
+                    android:id="@+id/tvSName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:text="S-Name"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvRData"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:text="PinValue"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="Date"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvPackage"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:text="Date"
+                    android:textColor="@color/black" />
+
+                <TextView
+
+                    android:id="@+id/tvPv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="PV"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/footer"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

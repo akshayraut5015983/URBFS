@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.urbfs">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="false"
+        android:icon="@drawable/new_roundlogo"
+        android:label="@string/app_name"
+        android:testOnly="false"
+        android:roundIcon="@drawable/new_roundlogo"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        tools:ignore="HardcodedDebugMode">
+
+        <activity android:name=".activity.Splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Frontview"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.Team_main"
+            android:label="Team"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Income_report"
+            android:label="History Report"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Income_wallet"
+            android:label="Income wallet"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Referal_Master"
+            android:label="Referal Master"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.NewsAndUpdateActivity"
+            android:label="News And Update"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".activity.NewRegistrationUser"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.WebsiteActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.ProfileUpdateActivity"
+            android:label="@string/profile"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".activity.DirectActivitys"
+            android:label="Level"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.LevelDetailsActivitys"
+            android:label="Level Details"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.Pinmaster"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.ReferActivity"
+            android:label="@string/refer"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+
+</manifest>
