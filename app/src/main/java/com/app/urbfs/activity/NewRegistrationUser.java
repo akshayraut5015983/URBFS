@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -25,7 +26,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -34,7 +34,11 @@ import com.android.volley.toolbox.Volley;
 import com.app.urbfs.R;
 import com.app.urbfs.config.Config;
 import com.app.urbfs.config.SessionManager;
+import com.app.urbfs.interfaceapi.MyBackendService;
 import com.app.urbfs.model.ForPin;
+import com.app.urbfs.model.GetOrderIDRequest;
+import com.app.urbfs.model.GetOrderIDResponse;
+import com.instamojo.android.Instamojo;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -44,11 +48,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class NewRegistrationUser extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class NewRegistrationUser extends AppCompatActivity implements Instamojo.InstamojoPaymentCallback {
 
     private TextView tvPinname, tvPinAmt, tvSponName;
     private Button register, btnGetSponId;
@@ -63,8 +73,26 @@ public class NewRegistrationUser extends AppCompatActivity {
     SharedPreferences pref;
     String sesId = "", sesMobile = "", sesPass = "";
     String pinName = "", pinAmt = "", pinNo = "";
-    private LinearLayout mainLayout;
+    private LinearLayout mainLayout, layoutPin, layoutOnline;
     String mainUrl = "";
+    private boolean isOnline = true;
+    private Button btnOnline, btnPin;
+
+
+    private boolean mCustomUIFlow = true;
+    private static final String TAG = DonationActivity.class.getSimpleName();
+    String strrName = "Akshya", strrEmail = "Asd@gmail.com", strrMob = "9876543210", strAmt = "100", strDes = "this is description boc";
+
+    private MyBackendService myBackendService;
+
+    private static final HashMap<Instamojo.Environment, String> env_options = new HashMap<>();
+
+    static {
+        env_options.put(Instamojo.Environment.TEST, "https://test.instamojo.com/");
+        env_options.put(Instamojo.Environment.PRODUCTION, "https://api.instamojo.com/");
+    }
+
+    private Instamojo.Environment mCurrentEnv = Instamojo.Environment.PRODUCTION;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +112,10 @@ public class NewRegistrationUser extends AppCompatActivity {
         if (pref.contains(Config.KEY_PASSWORD)) {
             sesPass = pref.getString(Config.KEY_PASSWORD, "");
         }
+        btnPin = findViewById(R.id.btnPin);
+        btnOnline = findViewById(R.id.btnOnline);
+        layoutPin = findViewById(R.id.layoutPin);
+        layoutOnline = findViewById(R.id.layoutOnline);
         mainLayout = findViewById(R.id.mainReg);
         tvPinAmt = findViewById(R.id.tvPinAmt);
         tvPinname = findViewById(R.id.tvPinname);
@@ -103,6 +135,60 @@ public class NewRegistrationUser extends AppCompatActivity {
         tvSponName = findViewById(R.id.tvSponName);
         spinSpin = (Spinner) findViewById(R.id.spinSpin);
         register = (Button) findViewById(R.id.btnSignUp);
+
+        btnOnline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnOnline.setBackgroundColor(Color.parseColor("#ff4736"));
+                btnPin.setBackgroundColor(Color.parseColor("#707070"));
+                layoutPin.setVisibility(View.GONE);
+                layoutOnline.setVisibility(View.VISIBLE);
+                isOnline = true;
+            }
+        });
+        btnPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnPin.setBackgroundColor(Color.parseColor("#ff4736"));
+                btnOnline.setBackgroundColor(Color.parseColor("#707070"));
+                isOnline = false;
+                layoutOnline.setVisibility(View.GONE);
+                layoutPin.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://sample-sdk-server.instamojo.com")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        myBackendService = retrofit.create(MyBackendService.class);
+
+        mCurrentEnv = Instamojo.Environment.TEST;
+        Instamojo.getInstance().initialize(this, mCurrentEnv);
+
+       /* AlertDialog.Builder builder2 = new AlertDialog.Builder(NewRegistrationUser.this);
+        builder2.setTitle("Select your payment method...? ");
+        builder2.setPositiveButton("Online", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                layoutPin.setVisibility(View.GONE);
+                layoutOnline.setVisibility(View.VISIBLE);
+                isOnline = true;
+            }
+        });
+        builder2.setNegativeButton("Pin", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                isOnline = false;
+                layoutOnline.setVisibility(View.GONE);
+                layoutPin.setVisibility(View.VISIBLE);
+            }
+        });
+        builder2.setCancelable(false);
+        builder2.show();*/
 
         countryName = new ArrayList<>();
         pin = new ArrayList<>();
@@ -201,8 +287,13 @@ public class NewRegistrationUser extends AppCompatActivity {
                 } else {
                     if (nf != null && nf.isConnected() == true) {
 
+                        if (isOnline) {
+                            createOrderOnServer();
+                        } else {
+                            Toast.makeText(NewRegistrationUser.this, "Pin", Toast.LENGTH_SHORT).show();
+                        }
                         //http://urbsfhelp.live/API/APIURL.aspx?msg=sai%20leftside%20test%20test@gmailcom%20123%20232%209890989088%20abc433%20232%20545%2034%20257TKW0244831&Mobile=123456789
-                        mainUrl = Config.URL + "/API/APIURL.aspx?msg=" + sesId + "%20leftside%20" + strName + strLname + "%20" + strEmail + "%20" + strConPAass + "%20" + strPPay + "%20" + strMob + "%20" + strAdd + "%20" + strAdhar + "%20" + strPanCard + "%20" + strGPAy + "%20" + pinNo + "&Mobile=" + sesMobile;
+                      /*  mainUrl = Config.URL + "/API/APIURL.aspx?msg=" + sesId + "%20leftside%20" + strName + strLname + "%20" + strEmail + "%20" + strConPAass + "%20" + strPPay + "%20" + strMob + "%20" + strAdd + "%20" + strAdhar + "%20" + strPanCard + "%20" + strGPAy + "%20" + pinNo + "&Mobile=" + sesMobile;
                         Log.d("Register Url", mainUrl);
                         // http://urbsfhelp.live/API/APIURL.aspx?msg=chkpanno%2012345&mobile=123456789
                         String url = Config.URL + "API/APIURL.aspx?msg=chkpanno%20" + strPanCard + "&mobile=" + sesMobile;
@@ -212,7 +303,7 @@ public class NewRegistrationUser extends AppCompatActivity {
                         pDialog = new ProgressDialog(NewRegistrationUser.this);
                         pDialog.setMessage("Please wait...");
                         pDialog.setCancelable(false);
-                        pDialog.show();
+                        pDialog.show();*/
 
                     } else {
                         Toast.makeText(getApplicationContext(), "Network Connection Not Available", Toast.LENGTH_LONG).show();
@@ -242,6 +333,7 @@ public class NewRegistrationUser extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
+                        finish();
                     }
                 });
                 builder2.setPositiveButton("Refresh to load", new DialogInterface.OnClickListener() {
@@ -443,5 +535,82 @@ public class NewRegistrationUser extends AppCompatActivity {
         }
     }
 
+    private void createOrderOnServer() {
+        Log.d(TAG, "createOrderOnServer: ");
+        GetOrderIDRequest request = new GetOrderIDRequest();
+        request.setEnv(mCurrentEnv.name());
+        request.setBuyerName(strrName);
+        request.setBuyerEmail(strrEmail);
+        request.setBuyerPhone(strrMob);
+        request.setDescription(strDes);
+        request.setAmount(strAmt);
+
+        Call<GetOrderIDResponse> getOrderIDCall = myBackendService.createOrder(request);
+        Log.d(TAG, request.toString());
+        getOrderIDCall.enqueue(new retrofit2.Callback<GetOrderIDResponse>() {
+            @Override
+            public void onResponse(Call<GetOrderIDResponse> call, retrofit2.Response<GetOrderIDResponse> response) {
+                if (response.isSuccessful()) {
+                    String orderId = response.body().getOrderID();
+                    Log.d(TAG, "onResponse: " + orderId);
+                    if (mCustomUIFlow) {
+                        // Initiate the default SDK-provided payment activity
+                        initiateSDKPayment(orderId);
+                    }
+
+                } else {
+                    // Handle api errors
+                    try {
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        Log.d(TAG, "Error in response" + jObjError.toString());
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetOrderIDResponse> call, Throwable t) {
+                // Handle call failure
+                Log.d(TAG, "Failure");
+            }
+        });
+    }
+
+    private void initiateSDKPayment(String orderID) {
+        Instamojo.getInstance().initiatePayment(this, orderID, this);
+    }
+
+    @Override
+    public void onInstamojoPaymentComplete(String orderID, String transactionID, String paymentID, String paymentStatus) {
+        Log.d(TAG, "Payment complete" + "Payment complete. Order ID: " + orderID + ", Transaction ID: " + transactionID
+                + ", Payment ID:" + paymentID + ", Status: " + paymentStatus);
+        showToast("Payment complete. Order ID: " + orderID + ", Transaction ID: " + transactionID
+                + ", Payment ID:" + paymentID + ", Status: " + paymentStatus);
+    }
+
+    @Override
+    public void onPaymentCancelled() {
+        Log.d(TAG, "Payment cancelled");
+        showToast("Payment cancelled by user");
+    }
+
+    @Override
+    public void onInitiatePaymentFailure(String errorMessage) {
+        Log.d(TAG, "Initiate payment failed");
+        showToast("Initiating payment failed. Error: " + errorMessage);
+    }
+
+    private void showToast(final String message) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getBaseContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 
 }

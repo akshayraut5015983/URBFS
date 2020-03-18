@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\PersonalData\\URBFS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "E:\\New folder\\URBFS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\f6b0cee678c33ce23dfb9374b2406921\\jetified-play-services-appinvite-11.0.4\\res\\values-v11\\values.xml",
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\5d3dd3d9a883e4038f7be59125ed8d6c\\jetified-play-services-appinvite-11.0.4\\res\\values-v11\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

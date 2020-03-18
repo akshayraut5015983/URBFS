@@ -23,6 +23,13 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+    maven {
+        url "https://s3-ap-southeast-1.amazonaws.com/godel-release/godel/"
+    }
+}
+
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -50,6 +57,11 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.google.android.gms:play-services:11.0.4'
+
+    implementation 'com.instamojo:android-sdk:3.2.0'
+    implementation 'in.juspay:godel:0.6.25.4.1423'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 
     configurations {
         implementation.exclude group: "org.apache.httpcomponents", module: "httpclient"

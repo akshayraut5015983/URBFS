@@ -11,7 +11,8 @@ import com.app.urbfs.R;
 import com.app.urbfs.config.SessionManager;
 
 public class Splashscreen extends AppCompatActivity {
-SessionManager session;
+    SessionManager session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,16 +37,15 @@ SessionManager session;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
                 if (session.isLoggedIn() == true) {
                     Intent i = new Intent(getApplicationContext(), Frontview.class);
                     startActivity(i);
-                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     finish();
                 } else {
                     Intent intent = new Intent(Splashscreen.this, LoginActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     finish();
                 }
             }

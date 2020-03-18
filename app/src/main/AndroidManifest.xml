@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
@@ -34,7 +37,6 @@
         <activity android:name=".activity.Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -48,6 +50,10 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.Team_main"
+            android:label="Team"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.DonationActivity"
             android:label="Team"
             android:theme="@style/MyMaterialTheme" />
         <activity
@@ -101,6 +107,7 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+        <activity android:name=".activity.MainNActivity"/>
     </application>
 
 

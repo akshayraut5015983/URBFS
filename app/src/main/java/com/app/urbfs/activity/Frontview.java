@@ -82,14 +82,14 @@ public class Frontview extends AppCompatActivity implements BaseSliderView.OnSli
         hometext.setVisibility(View.VISIBLE);
         homefooter.setVisibility(View.VISIBLE);
 
-       /* findViewById(R.id.cardTrding).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.cardTrding).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Frontview.this, TrendingActivity.class);
+                Intent intent = new Intent(Frontview.this, DonationActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
             }
-        });*/
+        });
         findViewById(R.id.cardRefMaster).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,7 +141,7 @@ public class Frontview extends AppCompatActivity implements BaseSliderView.OnSli
                 }
             }
         });
-
+// http://urbsfhelp.live/api/apilogin.aspx?uid=sai&pass=123&mbl=123456
         String urls = Config.URL + "/api/apilogin.aspx?uid=" + String.valueOf(loginid) + "&pass=" + String.valueOf(passwords) + "&mbl=" + String.valueOf(mobilenumber);
         DownloadWebPageTask task2 = new DownloadWebPageTask();
         task2.execute(new String[]{String.valueOf(urls)});
@@ -292,9 +292,9 @@ public class Frontview extends AppCompatActivity implements BaseSliderView.OnSli
 
      //   Log.d("Slider Demo", "Page Changed: " + position);
     }
-
     @Override
     public void onPageScrollStateChanged(int state) {
+
     }
 
 }

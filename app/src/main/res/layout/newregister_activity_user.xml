@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/backgorund"
     android:layout_height="match_parent"
+    android:background="@drawable/backgorund"
     android:orientation="vertical">
 
     <LinearLayout
@@ -33,63 +33,121 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-
-                <Spinner
-                    android:id="@+id/spinSpin"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/btn_dropdown"
-                    android:gravity="center_vertical"
-                    android:textColorHint="#cccccc" />
-
                 <LinearLayout
-                    android:id="@+id/pinLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvPinAmt"
+                    <Button android:id="@+id/btnOnline"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:text="Online"
+                        android:textColor="@color/white" />
+
+                    <Button android:id="@+id/btnPin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@color/gray_7"
+                        android:text="Pin"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <Spinner
+                        android:id="@+id/spinSpin"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/btn_dropdown"
+                        android:gravity="center_vertical"
+                        android:textColorHint="#cccccc" />
+
+                    <LinearLayout
+                        android:id="@+id/pinLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvPinAmt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/box"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/tvPinname"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/box"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutOnline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvOnlineAmt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:background="@drawable/box"
-                        android:padding="5dp"
                         android:gravity="center"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:text="Amount-   2600"
                         android:textColor="@color/black"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/tvPinname"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/box"
-                        android:padding="5dp"
-                        android:gravity="center"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
+                        android:textColorHint="@color/gray_7" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="3"
                     android:orientation="horizontal"
                     android:padding="10dp">
@@ -100,9 +158,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:background="@drawable/box"
-                        android:padding="5dp"
                         android:hint="Enter Sponsored id"
                         android:inputType="text"
+                        android:padding="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/colorAccent" />
 
@@ -112,15 +170,15 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
 
-                        android:gravity="center"
                         android:background="@drawable/box"
+                        android:gravity="center"
 
                         android:maxLines="1"
-                        android:visibility="gone"
                         android:padding="5dp"
                         android:text="Name"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/gray_7" />
+                        android:textColorHint="@color/gray_7"
+                        android:visibility="gone" />
 
 
                 </LinearLayout>
@@ -132,10 +190,10 @@
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:textColor="@color/white"
                     android:background="@drawable/selector_xml_name"
                     android:gravity="center"
-                    android:text="Get Name" />
+                    android:text="Get Name"
+                    android:textColor="@color/white" />
 
 
                 <LinearLayout
@@ -146,7 +204,6 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:visibility="gone">
-
 
 
                     <LinearLayout
@@ -162,9 +219,9 @@
                             android:layout_margin="3dp"
                             android:layout_weight="1"
                             android:background="@drawable/box"
-                            android:padding="5dp"
                             android:gravity="center"
                             android:hint="First name"
+                            android:padding="5dp"
                             android:textColor="@color/black"
                             android:textColorHint="@color/colorAccent" />
 
@@ -173,11 +230,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="3dp"
-                            android:background="@drawable/box"
-                            android:padding="5dp"
                             android:layout_weight="1"
+                            android:background="@drawable/box"
                             android:gravity="center"
                             android:hint="Last name"
+                            android:padding="5dp"
                             android:textColor="@color/black"
                             android:textColorHint="@color/colorAccent" />
                     </LinearLayout>
@@ -193,12 +250,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="3dp"
                             android:layout_weight="1"
-                            android:gravity="center"
                             android:background="@drawable/box"
-                            android:padding="5dp"
+                            android:gravity="center"
                             android:hint="Mobile"
                             android:inputType="number"
                             android:maxLength="10"
+                            android:padding="5dp"
                             android:textColor="@color/black"
                             android:textColorHint="@color/colorAccent" />
 
@@ -209,10 +266,10 @@
                             android:layout_margin="3dp"
                             android:layout_weight="1"
                             android:background="@drawable/box"
-                            android:padding="5dp"
                             android:gravity="center"
                             android:hint="Email"
                             android:inputType="textEmailAddress"
+                            android:padding="5dp"
                             android:textColor="@color/black"
                             android:textColorHint="@color/colorAccent" />
                     </LinearLayout>
@@ -223,9 +280,9 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
+                        android:background="@drawable/box"
                         android:gravity="left"
                         android:hint="Address"
-                        android:background="@drawable/box"
                         android:padding="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/colorAccent" />
@@ -236,11 +293,11 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
-                        android:gravity="left"
                         android:background="@drawable/box"
-                        android:padding="5dp"
+                        android:gravity="left"
                         android:hint="Adhar card"
                         android:inputType="number"
+                        android:padding="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/colorAccent" />
 
@@ -250,10 +307,10 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
-                        android:gravity="left"
                         android:background="@drawable/box"
-                        android:padding="5dp"
+                        android:gravity="left"
                         android:hint="Pan card"
+                        android:padding="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/colorAccent" />
 
@@ -263,11 +320,11 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
-                        android:gravity="left"
                         android:background="@drawable/box"
-                        android:padding="5dp"
+                        android:gravity="left"
                         android:hint="Phon pay"
                         android:inputType="number"
+                        android:padding="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/colorAccent" />
 
@@ -277,11 +334,11 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
+                        android:background="@drawable/box"
                         android:gravity="left"
                         android:hint="Google pay"
-                        android:background="@drawable/box"
-                        android:padding="5dp"
                         android:inputType="number"
+                        android:padding="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/colorAccent" />
 
@@ -291,11 +348,11 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
-                        android:gravity="left"
                         android:background="@drawable/box"
-                        android:padding="5dp"
+                        android:gravity="left"
                         android:hint="Enter your password"
                         android:inputType="textPassword"
+                        android:padding="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/colorAccent" />
 
@@ -306,10 +363,10 @@
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:background="@drawable/box"
-                        android:padding="5dp"
                         android:gravity="left"
                         android:hint="Confirm password"
                         android:inputType="textPassword"
+                        android:padding="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/colorAccent" />
 

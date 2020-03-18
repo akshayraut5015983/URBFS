@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\PersonalData\\URBFS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "E:\\New folder\\URBFS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\697f71c0c12135256cbfe98df498a7e4\\appcompat-1.0.2\\res\\values-land\\values-land.xml",
@@ -11,23 +11,6 @@
                         "startOffsets": "55,125,196",
                         "endColumns": "69,70,67",
                         "endOffsets": "120,191,259"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\028503ad9670d64601371eb6e62fe8d3\\jetified-play-services-cast-framework-11.0.4\\res\\values-land\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9",
-                        "startColumns": "0,0,0,0,0,0",
-                        "startOffsets": "183,264,344,414,483,578",
-                        "endColumns": "80,79,69,68,94,90",
-                        "endOffsets": "263,343,413,482,577,668"
-                    },
-                    "to": {
-                        "startLines": "5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "264,349,433,507,580,679",
-                        "endColumns": "84,83,73,72,98,94",
-                        "endOffsets": "344,428,502,575,674,769"
                     }
                 },
                 {
@@ -64,6 +47,23 @@
                         "startOffsets": "774,849,927",
                         "endColumns": "74,77,74",
                         "endOffsets": "844,922,997"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\665f29b4e98531a41be1b1ef9d57feb1\\jetified-play-services-cast-framework-11.0.4\\res\\values-land\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "0,0,0,0,0,0",
+                        "startOffsets": "183,264,344,414,483,578",
+                        "endColumns": "80,79,69,68,94,90",
+                        "endOffsets": "263,343,413,482,577,668"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "264,349,433,507,580,679",
+                        "endColumns": "84,83,73,72,98,94",
+                        "endOffsets": "344,428,502,575,674,769"
                     }
                 }
             ]

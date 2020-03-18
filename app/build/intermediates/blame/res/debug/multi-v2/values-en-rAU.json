@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\PersonalData\\URBFS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
+            "outputFile": "E:\\New folder\\URBFS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\697f71c0c12135256cbfe98df498a7e4\\appcompat-1.0.2\\res\\values-en-rAU\\values-en-rAU.xml",
@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\2998be295d995b41677fa40c47460d8b\\jetified-play-services-wallet-11.0.4\\res\\values-en-rAU\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "244",
+                        "endColumns": "99",
+                        "endOffsets": "343"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "4964",
+                        "endColumns": "103",
+                        "endOffsets": "5063"
+                    }
+                },
+                {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\8f8ab13dc8f4e84e14a8bb3d9ac92bc4\\core-1.0.1\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
@@ -35,23 +52,6 @@
                         "startOffsets": "4863",
                         "endColumns": "100",
                         "endOffsets": "4959"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\8335223956c1e13ea7250fa9b8112464\\jetified-play-services-wallet-11.0.4\\res\\values-en-rAU\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "244",
-                        "endColumns": "99",
-                        "endOffsets": "343"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "4964",
-                        "endColumns": "103",
-                        "endOffsets": "5063"
                     }
                 },
                 {

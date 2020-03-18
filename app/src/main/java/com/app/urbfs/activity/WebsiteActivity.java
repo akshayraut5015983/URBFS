@@ -58,13 +58,21 @@ public class WebsiteActivity extends AppCompatActivity {
         }
 
         progressBar1 = (ProgressBar) findViewById(R.id.progressBar1);
+        ConnectivityManager cn = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo nf = cn.getActiveNetworkInfo();
 
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        webView.getSettings().setBuiltInZoomControls(true);
-        webView.getSettings().setDisplayZoomControls(false);
-        webView.loadUrl("http://urbsfhelp.live");
-        webView.setWebViewClient(new HelloWebViewClient());
+        if (nf != null && nf.isConnected() == true) {
+
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            webView.getSettings().setBuiltInZoomControls(true);
+            webView.getSettings().setDisplayZoomControls(false);
+            webView.loadUrl("http://urbsfhelp.live");
+            webView.setWebViewClient(new HelloWebViewClient());
+        } else {
+
+        }
+
 
         homef = (ImageView) findViewById(R.id.home_footer);
         homef.setOnClickListener(new View.OnClickListener() {

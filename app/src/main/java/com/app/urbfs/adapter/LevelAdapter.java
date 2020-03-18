@@ -49,10 +49,10 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> 
 
         final LevelModel m = superHeroes.get(position);
 
-        holder.tvLavel.setText("Go to level - " + String.valueOf(m.getLevel()));
-        holder.tvActive.setText("Active - " + String.valueOf(m.getActive()));
-        holder.tvInactive.setText("Inactive - " + String.valueOf(m.getInactive()));
-        holder.tvCount.setText("NO of ID's - " + String.valueOf(m.getCount()));
+        holder.tvLavel.setText("Go to level-  " + String.valueOf(m.getLevel()));
+        holder.tvActive.setText("Active-  " + String.valueOf(m.getActive()));
+        holder.tvInactive.setText("Inactive-  " + String.valueOf(m.getInactive()));
+        holder.tvCount.setText("NO of ID's-  " + String.valueOf(m.getCount()));
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -10,11 +10,10 @@
 
     <ImageView
         android:id="@+id/splash"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:padding="10dp"
-        android:background="#30000000"
         android:src="@drawable/logoo" />
 
 

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android" android:enterFadeDuration="@android:integer/config_shortAnimTime" android:exitFadeDuration="@android:integer/config_longAnimTime">
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="@android:integer/config_shortAnimTime"
+    android:exitFadeDuration="@android:integer/config_longAnimTime">
 
     <item>
         <shape>
-            <gradient android:angle="270" android:endColor="#ffdbb8" android:startColor="#ffffff" />
+            <gradient android:angle="270"
+                android:endColor="#ffdbb8"
+                android:startColor="#ffffff" />
         </shape>
     </item>
     <item>
-        <color android:color="#ffffff"/>
+        <color android:color="#ffffff" />
     </item>
 </selector>

@@ -4,26 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_referal__master">
 
-    <ScrollView
-        android:id="@+id/scrollView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
 
         <LinearLayout
             android:id="@+id/container_body"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:weightSum="4"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_weight="2"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -31,281 +29,430 @@
                     android:layout_weight="2"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:id="@+id/cardRegi"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/shape">
+                        app:cardBackgroundColor="@android:color/holo_orange_dark"
+                        app:cardCornerRadius="@dimen/fragment_title_padding_10">
 
                         <LinearLayout
+                            android:id="@+id/cardRegi"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/selector_xml"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
 
-                            <ImageView
-                                android:id="@+id/imgview_regi"
-                                android:layout_width="75dp"
-                                android:layout_height="70dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/register" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:background="@drawable/selector_xml"
+                                android:orientation="vertical"
+                                android:padding="10dp">
 
-                            <TextView
-                                android:id="@+id/textreg"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.10"
-                                android:gravity="center"
-                                android:text="@string/nav_item_registration"
-                                android:textColor="@color/black" />
+                                <ImageView
+                                    android:id="@+id/imgview_regi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="3"
+                                    android:src="@drawable/register" />
 
+                                <TextView
+                                    android:id="@+id/textreg"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="@string/nav_item_registration"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
                         </LinearLayout>
-                    </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <LinearLayout
-                        android:id="@+id/cardRefLink"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/shapeeee">
+                        app:cardBackgroundColor="@android:color/holo_purple"
+                        app:cardCornerRadius="@dimen/fragment_title_padding_10">
 
                         <LinearLayout
+                            android:id="@+id/cardRefLink"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/selector_xml"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
 
-                            <ImageView
-                                android:id="@+id/imgview_refer"
-                                android:layout_width="75dp"
-                                android:layout_height="70dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/send" />
-
-                            <TextView
-                                android:id="@+id/textrefer"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="0dp"
-                                android:layout_weight="0.10"
-                                android:gravity="center"
-                                android:text="Refer / Send Link"
-                                android:textColor="@color/black" />
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:background="@drawable/selector_xml"
+                                android:orientation="vertical"
+                                android:padding="10dp">
 
+                                <ImageView
+                                    android:id="@+id/imgview_refer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="3"
+                                    android:src="@drawable/send" />
+
+                                <TextView
+                                    android:id="@+id/textrefer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Refer / Send Link"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
                         </LinearLayout>
-                    </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
             </LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <LinearLayout
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    app:cardBackgroundColor="#666699"
+                    app:cardCornerRadius="@dimen/fragment_title_padding_10">
 
                     <LinearLayout
                         android:id="@+id/cardTeam"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/shape">
+                        android:layout_weight="1">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/selector_xml"
                             android:orientation="vertical"
-
-                            android:padding="10dp">
+                            android:padding="10dp"
+                            android:weightSum="4">
 
                             <ImageView
                                 android:id="@+id/imgview_userteam"
-                                android:layout_width="75dp"
-                                android:layout_height="70dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/team" />
+                                android:layout_weight="3"
+                                android:src="@drawable/team" />
 
                             <TextView
                                 android:id="@+id/textteam"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.80"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Team"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
                     </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#993333"
+                    app:cardCornerRadius="@dimen/fragment_title_padding_10">
 
                     <LinearLayout
                         android:id="@+id/cardDairect"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-
-                        android:background="@drawable/shapeeee">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/selector_xml"
                             android:orientation="vertical"
-
-                            android:padding="10dp">
+                            android:padding="10dp"
+                            android:weightSum="4">
 
                             <ImageView
                                 android:id="@+id/imgview_direct"
-                                android:layout_width="75dp"
-                                android:layout_height="70dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/direct" />
+                                android:layout_weight="3"
+                                android:src="@drawable/direct" />
 
                             <TextView
                                 android:id="@+id/textdirect"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.10"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Level"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
 
-                <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="135dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    app:cardBackgroundColor="#9cc2f2"
+                    app:cardCornerRadius="@dimen/fragment_title_padding_10">
 
                     <LinearLayout
                         android:id="@+id/cardIncomeReport"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/shape">
+                        android:layout_weight="1">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/selector_xml"
                             android:orientation="vertical"
-
-                            android:padding="10dp">
+                            android:padding="10dp"
+                            android:weightSum="4">
 
                             <ImageView
                                 android:id="@+id/img_incomereport"
-                                android:layout_width="75dp"
-                                android:layout_height="70dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/incomereport" />
+                                android:layout_weight="3"
+                                android:src="@drawable/incomereport" />
 
                             <TextView
                                 android:id="@+id/txtincomereport"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.10"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="History Report"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
                     </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#85b28f"
+                    app:cardCornerRadius="@dimen/fragment_title_padding_10">
 
                     <LinearLayout
                         android:id="@+id/cardIncomWalllet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/shapeeee">
+                        android:layout_weight="1">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/selector_xml"
                             android:orientation="vertical"
-                            android:padding="10dp">
+                            android:padding="10dp"
+                            android:weightSum="4">
 
                             <ImageView
                                 android:id="@+id/imgview_wallet"
-                                android:layout_width="75dp"
-                                android:layout_height="70dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/incomewallet" />
+                                android:layout_weight="3"
+                                android:src="@drawable/incomewallet" />
 
                             <TextView
                                 android:id="@+id/textwallet"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.10"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Income Wallet"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
                     </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/cardReperWallet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeeee"
+                    android:visibility="gone">
 
                     <LinearLayout
-                        android:id="@+id/cardReperWallet"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/selector_xml"
+                        android:orientation="vertical"
+
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imgview_workingwallet"
+                            android:layout_width="75dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/workingwallet" />
+
+                        <TextView
+                            android:id="@+id/textworkingwallet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.10"
+                            android:gravity="center"
+                            android:text="Repurchase Wallet"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#6bf2c2"
+                    app:cardCornerRadius="@dimen/fragment_title_padding_10">
+
+                    <LinearLayout
+                        android:id="@+id/cardPinMaster"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/shapeeee"
-                        android:visibility="gone">
+                        android:layout_weight="1">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/selector_xml"
                             android:orientation="vertical"
-
-                            android:padding="10dp">
+                            android:padding="10dp"
+                            android:weightSum="4">
 
                             <ImageView
-                                android:id="@+id/imgview_workingwallet"
-                                android:layout_width="75dp"
-                                android:layout_height="70dp"
+                                android:id="@+id/imgview_pinmaster"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/workingwallet" />
+
+                                android:layout_weight="3"
+                                android:src="@drawable/pinmaster" />
 
                             <TextView
-                                android:id="@+id/textworkingwallet"
+                                android:id="@+id/txt_pinmaster"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.10"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="Repurchase Wallet"
-                                android:textColor="@color/black" />
+                                android:text="Pin Master"
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
                     </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#0a91c2"
+                        app:cardCornerRadius="@dimen/fragment_title_padding_10">
+
+                        <LinearLayout
+                            android:id="@+id/cardNewUpdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/selector_xml"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:weightSum="4">
+
+                                <ImageView
+                                    android:id="@+id/imgview_newsandupdates"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="3"
+                                    android:src="@drawable/news" />
+
+                                <TextView
+                                    android:id="@+id/txt_news"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="News and Updates"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
+
             </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="135dp"
                 android:layout_weight="1"
-                android:visibility="gone"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
 
                 <LinearLayout
@@ -345,89 +492,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="135dp"
-                android:layout_weight="0.80"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/cardPinMaster"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/selector_xml"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:id="@+id/imgview_pinmaster"
-                            android:layout_width="75dp"
-                            android:layout_height="70dp"
-
-                            android:layout_gravity="center"
-                            android:background="@drawable/pinmaster" />
-
-                        <TextView
-                            android:id="@+id/txt_pinmaster"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.10"
-                            android:gravity="center"
-                            android:text="Pin Master"
-                            android:textColor="@color/black" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:id="@+id/cardNewUpdate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/shapeeee">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/selector_xml"
-                            android:orientation="vertical"
-                            android:padding="10dp">
-
-                            <ImageView
-                                android:id="@+id/imgview_newsandupdates"
-                                android:layout_width="75dp"
-                                android:layout_height="70dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/news" />
-
-                            <TextView
-                                android:id="@+id/txt_news"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.10"
-                                android:gravity="center"
-                                android:text="News and Updates"
-                                android:textColor="@color/black" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-
             <TextView
                 android:id="@+id/rightreseved"
                 android:layout_width="wrap_content"
@@ -451,7 +515,5 @@
                 android:textSize="8sp"
                 android:visibility="gone" />
         </LinearLayout>
-    </ScrollView>
-
 
 </RelativeLayout>

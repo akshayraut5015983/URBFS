@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\PersonalData\\URBFS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "outputFile": "E:\\New folder\\URBFS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\697f71c0c12135256cbfe98df498a7e4\\appcompat-1.0.2\\res\\values-large-v4\\values-large-v4.xml",
@@ -28,6 +28,25 @@
                         "startOffsets": "752,874",
                         "endColumns": "121,133",
                         "endOffsets": "869,1003"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\97a5475d1cb1539a3a06598e46acbcdc\\jetified-godel-0.6.25.4.1423\\res\\values-large-v4\\values-large-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "7",
+                        "endColumns": "12",
+                        "endOffsets": "326"
+                    },
+                    "to": {
+                        "startLines": "13",
+                        "startColumns": "4",
+                        "startOffsets": "1008",
+                        "endLines": "18",
+                        "endColumns": "12",
+                        "endOffsets": "1279"
                     }
                 }
             ]

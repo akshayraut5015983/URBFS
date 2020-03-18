@@ -2,11 +2,8 @@ package com.app.urbfs.activity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
@@ -18,7 +15,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.urbfs.R;
-import com.app.urbfs.config.Config;
 import com.app.urbfs.config.SessionManager;
 
 import org.apache.http.HttpResponse;
@@ -71,11 +67,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                  /*  Intent in = new Intent(LoginActivity.this, Frontview.class);
+                    Intent in = new Intent(LoginActivity.this, Frontview.class);
                     startActivity(in);
-                    session.createLoginSession("sai", "123456789", "123");*/
+                    session.createLoginSession("sai", "123456789", "123");
 
-                uid1 = uid.getText().toString().trim();
+               /* uid1 = uid.getText().toString().trim();
                 pwd1 = pwd.getText().toString().trim();
                 mno = mbno.getText().toString().trim();
 
@@ -113,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(getApplicationContext(), "Network Connection Not Available", Toast.LENGTH_LONG).show();
                     }
-                }
+                }*/
             }
 
         });

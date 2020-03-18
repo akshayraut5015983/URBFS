@@ -47,7 +47,7 @@ public class Referal_Master extends AppCompatActivity implements NavigationView.
     SharedPreferences pref;
     String tokens, loginid, mobilenumber, passwords, token, s;
     ImageView homef, updatef, logoutf, profilef;
-String str="akshayga hgdh";
+    String str = "akshayga hgdh";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,6 @@ String str="akshayga hgdh";
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         session = new SessionManager(getApplicationContext());
 
